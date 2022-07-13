@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "engines": {
+    "node": "16.13.0 ",
+    "npm": "8.1.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/main.ts",
+    "start:dev": "ts-node-dev --watch \"src/**/*\" --respawn --transpile-only src/main.ts ",
+    "start:prod": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@colyseus/monitor": "^0.14.22",
+    "colyseus": "^0.14.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}

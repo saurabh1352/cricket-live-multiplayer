@@ -1,0 +1,45 @@
+
+onLoad(); 
+C3 function - bothPlayerConnected 
+C3 function - batTurn, when batsman turn, show batsman enable control, disable ball controls 
+C3 function - ballTurn, when baller turn, show baller enable control, disable bat controls 
+ 
+ 
+PARALLEL 
+ 
+for Baller space 
+JS function - sendBallPosition(X), send x position when baller select the x and lock it.    
+JS function - sendBallPower(POWER), send power value when it is lock. 
+
+Received by both Clients
+
+
+C3 function - c3_callFunction("getBallPosition", [X]);  , server will send x position for both space 
+C3 function - c3_callFunction("getBallPower", [X]);, server will send power value both space 
+ 
+batsman
+C3 function - c3_callFunction("triggerBallAction", [0]); balling animation will start in batsman 
+space only. 
+ 
+IF BALL HIT 
+JS function - sendBattingDone(VALUE);, when batsman will hit the ball and send the value of 
+bullet or angle 
+C3 function - c3_callFunction("getBattingDone", [VALUE]);, server will send value to balling 
+C3 function - c3_callFunction("triggerBallAction", [0]); balling animation will start in balling space 
+only. 
+
+space, now show the animation of batsman along with ball going with the help of baller after 
+collision with collider. 
+JS function -  sendRun(SCORE);, send score when it is collided 
+ 
+NOW BALLS IN LOOP 
+ 
+ 
+IF BALL MISSES 
+JS function - ballMiss(X); , send the X of the ball to the server and 1 . 
+C3 function - c3_callFunction("getBallX", [X]); , get ballx value  if it is not 1 then play shot 
+animation accordingly if it is 1 then play animation while loosing wicket  -  NEWW 
+ 
+NOW BALLS IN LOOP 
+ 
+writer.editor.GO_TO_TOPwriter.editor.GO_TO_BOTTOM
